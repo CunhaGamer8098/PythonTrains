@@ -1,0 +1,31 @@
+perguntas = [
+    {
+        'Pergunta':'Quanto é 2+2',
+        'Opções': ['1','2','3','4'],
+        'Resposta': '4'
+    },
+    {
+        'Pergunta':'Quanto é 5*5',
+        'Opções': ['25','55','10','51'],
+        'Resposta': '25'
+    },
+    {
+        'Pergunta':'Quanto é 10/2',
+        'Opções': ['4','5','2','1'],
+        'Resposta': '5'
+    },
+]
+def pergunta(x):
+    for chave, nota in perguntas[x].items():
+        if chave == 'Resposta':
+            resp = input("Escolha uma opção: ")
+            print("Você acertou" if resp == perguntas[x]['Resposta'] else "Você errou")
+            break
+        print(chave,':', nota)
+        if chave == 'Opções':    
+            for i, opcao in enumerate(perguntas[x]['Opções'], start=1):
+                print(i, ")", opcao)
+
+
+for i in range(len(perguntas)):
+    pergunta(i)
